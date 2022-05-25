@@ -1,3 +1,4 @@
+
 export default {
   name: 'blog',
   type: 'document',
@@ -7,6 +8,19 @@ export default {
       name: 'title',
       type: 'string',
       title: 'title'
+    },
+    {
+      name: 'slug',
+      title: 'slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        slugify: (input) => input
+          .toLowerCase()
+          .replace(/\s+/g, '-')
+          .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, ""),
+        validation: (Rule) => Rule.required(),
+      },
     },
     {
       name: 'body',
@@ -22,6 +36,6 @@ export default {
       name: 'createdAt',
       type: 'datetime',
       title: 'createdAt'
-    }
+    },
   ]
 }

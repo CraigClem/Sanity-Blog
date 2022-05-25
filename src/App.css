@@ -1,0 +1,23 @@
+.allPosts-Container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.post {
+  width: 25%;
+  height: 25%;
+}
+
+.main-image {
+  width: 100%;
+}
+
+.singlePost-img {
+  width: 100;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

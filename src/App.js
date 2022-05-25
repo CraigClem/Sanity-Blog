@@ -9,8 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<AllPosts />} path='/' exact />
-        <Route element={<SinglePost />} path='/single' />
+        <Route element={<AllPosts />} path='/' />
+        <Route element={<SinglePost />} path='/:slug' />
       </Routes>
     </BrowserRouter>
   );
