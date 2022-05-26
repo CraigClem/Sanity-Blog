@@ -23,19 +23,31 @@ export default {
       },
     },
     {
-      name: 'body',
+      name: 'excerpt',
       type: 'string',
-      title: 'body'
+      title: 'excerpt'
     },
     {
-      name: 'image',
+      name: 'mainImage',
       type: 'image',
-      title: 'image'
+      title: 'mainImage'
     },
     {
       name: 'createdAt',
       type: 'datetime',
       title: 'createdAt'
     },
+    {
+      name: 'content',
+      type: 'array',
+      of: [
+        {
+          type: 'block'
+        },
+        {
+          type: 'image'
+        },
+      ]
+    }
   ]
 }
