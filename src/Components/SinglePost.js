@@ -36,26 +36,25 @@ function SinglePost() {
   }, [slug])
 
 
-  if (!singlePost) return <div>Loading</div>;
+  if (!singlePost) return <div class="d-flex justify-content-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
 
 
   return (
-    <section>
-      <Link to={`/`}>
-        <button>Home</button>
-      </Link>
-      <div className='singlePost-container'>
-        <img src={urlFor(singlePost.mainImage).width(600).url()} alt='hello' />
-        <h1>{singlePost.title}</h1>
-        <div>
-          <BlockContent
-            blocks={singlePost.content}
-            projectId='t3i39t8x'
-            dataset='production'
-          />
-        </div>
-        <p>{singlePost.createdAt}</p>
+    <section className="text-center m-2 container">
+      <h1>{singlePost.title}</h1>
+      <img className="img-fluid" src={urlFor(singlePost.mainImage).width(400).url()} alt='hello' />
+      <div>
+        <BlockContent
+          blocks={singlePost.content}
+          projectId='t3i39t8x'
+          dataset='production'
+        />
       </div>
+      <p>{singlePost.createdAt}</p>
     </section>
   )
 }
